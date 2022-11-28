@@ -51,7 +51,7 @@ const VideoCard: NextPage<VideoProps> = ({ post }: VideoProps) => {
                     </div>
                     <div className="flex items-center gap-2">
                         <Link href="/">
-                            <div className="">
+                            <div className="mt-3 flex flex-col gap-2">
                                 <p className='flex gap-2 items-center md:text-md font-bold text-primary'>{post.postedBy.username} {" "}
                                     <GoVerified className='text-blue-400 text-md' />
                                 </p>
@@ -65,12 +65,12 @@ const VideoCard: NextPage<VideoProps> = ({ post }: VideoProps) => {
                 <div onMouseEnter={() => setIsHover(true)}
                     onMouseLeave={() => setIsHover(false)} className="rounded-3xl">
                     <Link href={`/detail/${post._id}`}>
-                        <video src={post.video.asset.url} loop ref={videoRef} className='lg:w-[600px] h-[300px] md:h-[400px] lg:h-[528px] w-[200px] rounded-2xl cursor-pointer bg-gray-100'>
+                        <video src={post.video.asset.url} loop ref={videoRef} className='lg:w-[600px]  md:h-[400px] md:w-[500px] lg:h-[528px] w-[400px] h-[350px] rounded-2xl cursor-pointer bg-gray-100'>
 
                         </video>
                     </Link>
                     {isHover && (
-                        <div className='absolute bottom-6 cursor-pointer left-8 md:left-14 lg:left-0 flex gap-10 lg:justify-between w-[100px] md:w-[50px] p-3'>
+                        <div className='absolute bottom-3 cursor-pointer left-8 md:left-8 lg:left-0 flex gap-10 lg:justify-between w-[100px] md:w-[50px] p-3'>
                             {playing ? <button>
                                 <BsFillPauseFill onClick ={onVideoPress}className='text-black text-2xl lg:text-4xl' />
                             </button> : <button>

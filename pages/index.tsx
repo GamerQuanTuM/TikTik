@@ -2,13 +2,14 @@ import Head from 'next/head'
 import NoResults from '../components/NoResults';
 import VideoCard from '../components/VideoCard';
 import { Video } from '../types'
+import { BASE_URL } from '../utils';
 
 type VideoProps = {
   videos: Video[]
 }
 
 export default function Home({ videos }: VideoProps) {
-  
+
   return (
     <div className=''>
       <Head>
@@ -18,13 +19,13 @@ export default function Home({ videos }: VideoProps) {
       </Head>
 
       <section className='flex flex-col gap-10 videos h-full'>
-        {videos.length?
-        videos.map((video:Video)=>(
-          <VideoCard post={video} key={video._id}/>
-        )) :(
-          <NoResults text={'No Videos'}/>
-        ) 
-      }
+        {videos.length ?
+          videos.map((video: Video) => (
+            <VideoCard post={video} key={video._id} />
+          )) : (
+            <NoResults text={'No Videos'} />
+          )
+        }
       </section>
     </div>
   )
@@ -32,7 +33,7 @@ export default function Home({ videos }: VideoProps) {
 
 export const getServerSideProps = async () => {
 
-  const response = await fetch(`http://localhost:3000/api/post`)
+  const response = await fetch(`${BASE_URL}/api/post`)
   const data = await response.json()
 
 

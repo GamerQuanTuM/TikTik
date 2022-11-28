@@ -11,7 +11,7 @@ export type User = {
 
 //Creating a new user or getting a user from database
 export const createorGetUser = async ({ name, picture, sub }: User, addUser: any) => {
-    const url = `http://localhost:3000/api/auth`
+    const url = `${BASE_URL}/api/auth`
     const user = {
         _id: sub,
         _type: 'user',
