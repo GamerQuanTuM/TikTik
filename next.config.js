@@ -3,7 +3,7 @@ const nextConfig = {
   reactStrictMode: true,
   swcMinify: true,
   images:{
-    domains:['wallpapercave.com','lh3.googleusercontent.com']
+    domains:['wallpapercave.com','lh3.googleusercontent.com','imagevars.gulfnews.com']
   }
 }
 

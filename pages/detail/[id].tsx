@@ -40,7 +40,7 @@ export default function Details({ postDetails }: Props) {
       setIsPlaying(true);
     }
   };
-  
+
 
   useEffect(() => {
     if (post && videoRef?.current) {
@@ -58,6 +58,20 @@ export default function Details({ postDetails }: Props) {
       setPost({ ...post, likes: res.data.likes });
     }
   };
+
+  const addComment = async (e: React.FormEvent<Element>) => {
+    e.preventDefault();
+    if (userProfile && comment) {
+      setIsPostingComment(true)
+      const { data } = await axios.put(`${BASE_URL}/api/post/${post._id}`, {
+        userId: userProfile._id,
+        comment
+      });
+      setPost({ ...post, comments: data.comments })
+      setComment("");
+      setIsPostingComment(false)
+    }
+  }
 
 
   return (
@@ -119,7 +133,9 @@ export default function Details({ postDetails }: Props) {
               <LikeButton handleLike={() => handleLike(true)} handleDislike={() => handleLike(false)} likes={post.likes} />
             )}
           </div>
-          <Comments />
+          <Comments comment={comment} setComment={setComment} addComment={addComment}
+            comments={post.comments}
+            isPostingComment={isPostingComment} />
         </div>
       </div>
     </div>
