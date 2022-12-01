@@ -30,7 +30,7 @@ const Comments = ({ comment, setComment, addComment, comments, isPostingComment 
       <div className='overflow-scroll lg:h-[457px]'>
         {comments?.length > 0 ? (
           comments?.map((item: IComment, idx: number) => (
-            <>
+            <React.Fragment key={idx}>
               {allUsers?.map(
                 (user: IUser) =>
                   user._id === (item.postedBy._ref || item.postedBy._id) && (
@@ -62,7 +62,7 @@ const Comments = ({ comment, setComment, addComment, comments, isPostingComment 
                     </div>
                   )
               )}
-            </>
+            </React.Fragment>
           ))
         ) : (
           <NoResults text='No Comments Yet! Be First to do add the comment.' />
@@ -72,7 +72,7 @@ const Comments = ({ comment, setComment, addComment, comments, isPostingComment 
         <form onSubmit={addComment} className='flex gap-4'>
           <input
             value={comment}
-            onChange={(e) => setComment(e.target.value.trim())}
+            onChange={(e) => setComment(e.target.value)}
             className='bg-primary px-6 py-4 text-md font-medium border-2 w-[250px] md:w-[700px] lg:w-[350px] border-gray-100 focus:outline-none focus:border-2 focus:border-gray-300 flex-1 rounded-lg'
             placeholder='Add comment..'
           />

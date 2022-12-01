@@ -14,8 +14,6 @@ function SuggestedAccount() {
     fetchAllUsers()
   }, [fetchAllUsers])
 
-  console.log(allUsers);
-
 
   return (
     <div className='xl:border-b-2 border-gray-200 pb-4'>
