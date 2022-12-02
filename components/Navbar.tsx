@@ -45,7 +45,7 @@ function Navbar() {
                         </button>
                     </div>
                 ) : (
-                    <GoogleLogin
+                    <GoogleLogin  size="medium" shape="circle" text="signin"
                         onSuccess={(response) => {
                             getUserFromToken(response, addUser);
                         }}

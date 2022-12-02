@@ -69,7 +69,7 @@ function Sidebar() {
                     <div>
                         {!userProfile &&
                             (
-                                <button onClick={() => login()} className='bg-whie text-lg text-[#F51997] border-[1px] border-[#F51997] font-semibold px-6 py-3 rounded-md outline-none w-full mt-3 hover:text-white hover:bg-[#F51997] cursor-pointer' >
+                                <button onClick={() => login()} className='hidden xl:block bg-white text-lg text-[#F51997] border-[1px] border-[#F51997] font-semibold px-6 py-3 rounded-md outline-none w-full mt-3 hover:text-white hover:bg-[#F51997] cursor-pointer' >
                                     Log In
                                 </button>
                             )}
