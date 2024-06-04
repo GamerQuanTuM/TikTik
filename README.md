@@ -1,34 +1,54 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# TikTik - A Short Video App
 
-## Getting Started
+## Description
 
-First, run the development server:
+TikTik is a captivating short video application inspired by the widely popular TikTok. It empowers users to:
 
-```bash
-npm run dev
-# or
-yarn dev
-```
+- <b>Create</b> engaging short videos and express their creativity.
+- <b>Share</b> their videos with the world and connect with a vibrant community.
+- <b>Discover</b> a boundless stream of exciting content based on their interests.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Key Features
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+- <b>Seamless:</b> User Authentication: Effortlessly sign in using Google OAuth, ensuring a smooth and secure login experience.
+- <b>Intuitive:</b> Video Uploads: Effortlessly upload your short video creations and share your moments with the world.
+- <b>Engaging Interactions:</b> Like, comment, and share videos to engage with the community and foster connections.
+- <b>Powerful Search:</b> Effortlessly search for specific videos and users based on video titles and usernames, making it easy to discover content you'll love.
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
+## Technology Stack
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+- <b>Frontend:</b> React - The industry-standard library for building dynamic and interactive user interfaces.
+- <b>Server-Side Rendering & Routing:</b> Next.js - Leverages React's capabilities while providing server-side rendering (SSR) and routing for enhanced performance and SEO.
+- <b>Backend & Storage:</b> Sanity CMS - A powerful and flexible headless CMS that empowers you to manage your content with ease.
+- <b>Third-Party Libraries:</b>
+    - <code>react-google-login:</code> Simplifies Google OAuth integration for user authentication.
+    - <code>react-icons:</code> Provides an extensive set of beautiful icons to enhance your UI.
+    - <code>axios:</code> A popular HTTP client that makes API calls a breeze.
+    - <code>uuidv4:</code> Generates unique identifiers for video management.
+- <b>State Management:</b> Zustand - A lightweight and efficient state management solution for your Next.js application
+ 
+  ## Getting Started
 
-## Learn More
+   1. <b>Clone the Repository:</b>
+       
+       ```bash
+       git clone https://github.com/GamerQuanTuM/TikTik
+       ```
+  2. <b>Install Dependencies:</b>
+       
+       ```bash
+        cd tiktik
+        npm install
+       ```
+  3. <b>Configure Environment Variables: Create a .env.local file at the root of your project and add the following environment variables (replace with your actual values):</b>
+       
+        ```bash
+        NEXT_PUBLIC_SANITY_PROJECT_ID=your-project-id
+        NEXT_PUBLIC_SANITY_DATASET=your-dataset
+       ```
+  4. <b>Run the Development Server:</b>
 
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+       ```bash
+        npm run dev
+       ```
+  
